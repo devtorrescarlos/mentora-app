@@ -1,7 +1,6 @@
-import { Bell, CircleHelp, Search } from "lucide-react";
+import { Bell } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 const currentUser = {
   name: "Admin Mentora",
