@@ -1,6 +1,9 @@
-import { Bell } from "lucide-react";
+"use client";
+
+import { Bell, Menu } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { useSidebar } from "@/components/ui/sidebar";
 
 const currentUser = {
   name: "Admin Mentora",
@@ -9,9 +12,22 @@ const currentUser = {
 };
 
 export function AdminHeader() {
+  const { toggleSidebar } = useSidebar();
+
   return (
     <header className="flex h-16 items-center gap-4 border-b bg-background px-4 sm:px-6">
-      <span className="text-lg font-bold text-primary lg:hidden">Mentora</span>
+      <div className="flex items-center gap-2">
+        <Button
+          variant="ghost"
+          size="icon"
+          aria-label="Abrir o cerrar menú"
+          onClick={toggleSidebar}
+          className="border-2 border-gray-200"
+        >
+          <Menu className="size-5 text-gray-500" />
+        </Button>
+        <span className="text-lg font-bold text-primary">Mentora</span>
+      </div>
 
       <div className="ml-auto flex items-center gap-1 sm:gap-2">
         <Button
