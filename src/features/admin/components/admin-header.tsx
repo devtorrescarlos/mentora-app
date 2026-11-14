@@ -4,11 +4,11 @@ import { Bell, Menu } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/components/ui/sidebar";
+import { getInitials } from "@/lib/getInitials";
 
 const currentUser = {
   name: "Admin Mentora",
   role: "Administrador",
-  initials: "AM",
 };
 
 export function AdminHeader() {
@@ -42,7 +42,7 @@ export function AdminHeader() {
 
         <div className="flex items-center gap-3 pl-2">
           <Avatar>
-            <AvatarFallback>{currentUser.initials}</AvatarFallback>
+            <AvatarFallback>{getInitials(currentUser.name)}</AvatarFallback>
           </Avatar>
           <div className="hidden leading-tight sm:block">
             <p className="text-sm font-medium">{currentUser.name}</p>
